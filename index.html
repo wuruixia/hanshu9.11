@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="xs.js"></script>
+     <script>
+	  var num=43;
+	  var num1=40;
+	  var info=`
+                        我们班由两个班组成，
+         第一个班505有${num}人，
+                         第二个班507有${num1}人，
+         总共有${num+num1}人`
+	 console.log(info);
+	 var a=10;
+	 var b='2px';
+	 alert(a<=b);
+	 //num%2==0 ? true :false;
+	 var a=prompt('请输入你的成绩',60)
+	 if(a>=90 && a<=100){
+           alert('优秀');
+	 }else if(a>=80 && a<90){
+          alert('良好');
+	 }else if(a>=70 && a<80){
+          alert('中等');
+	 }else if(a>=60 && a<70){
+          alert('及格');
+	 }else if(a>=0 && a<60){
+          alert('不及格');
+	 }else{
+	 	alert('输入错误');
+	 }
+	 
+	 var week=prompt('请输入星期',1);
+        switch(week){
+	 	case '1':
+	 	alert('星期一');
+	 	break;
+	 	case '2':
+	 	alert('星期二');
+	 	break;
+	 	case '3':
+	 	alert('星期三');
+	 	break;
+	 	case '4':
+	 	alert('星期四');
+	 	break;
+	 	case '5':
+	 	alert('星期五');
+	 	break;
+	 	default:
+	 	alert('输入错误');
+	 }
+	    //奇数
+	 var sum=0;
+	 for(var i=1;i<=10;i+=2){
+	 	sum+=i;
+	 }
+	 alert(sum);
+	 //偶数
+	 var sum=0;
+	 for(var i=0;i<=10;i+=2){
+	 	sum+=i;
+	 }
+	 alert(sum);
+	 //乘法表
+	    chengfa(11);
+	     function  chengfa(row){
+	    document.write('<table border=1 cellspacing=0>');
+	        for(var i=1;i<=row;i++){
+	   	        document.write('<tr>');
+	   	        if(i%2==0){
+	   	        	document.write('<tr>')
+	   	        	for(var j=1;j<=i;j++){
+	   	  	         
+	   	  	          if(j%2==0){
+	   	        	    document.write('<td bgcolor=red > '+i+'*'+j+'='+(i*j)+'</td>')
+	   	              }else{
+	   	        	    document.write('<td bgcolor=skyblue> '+i+'*'+j+'='+(i*j)+'</td>')
+	   	              }
+	   	            }
+	   	            document.write('</tr>');
+	            }
+	   	        else{
+	   	        	document.write('<tr>')
+	   	        	for(var j=1;j<=i;j++){
+	   	  	         
+	   	  	          if(j%2==1){
+	   	        	    document.write('<td bgcolor=pink > '+i+'*'+j+'='+(i*j)+'</td>')
+	   	              }else{
+	   	        	    document.write('<td bgcolor=yellow>  '+i+'*'+j+'='+(i*j)+'</td>')
+	   	              }
+	   	            }
+	   	        document.write('</tr>');
+	            }
+	   	   }
+	   	   
+	    document.write('</table>');
+     }
+     for(var i=1;i<=10;i++){
+         for(var j=1;j<=i;j++){
+          document.write('*');
+         }
+    document.write('<br/>')
+    }
+    
+    document.write('<table border=1 cellspacing=0>');
+	        for(var i=1;i<=10;i++){
+	   	        document.write('<tr>');
+	   	        if(i%2==0){
+	   	        	document.write('<tr bgcolor=red>')
+	   	        }else{
+	   	        	document.write('<tr bgcolor=yellow>')
+	   	        }
+	   	    for(var j=1;j<=10;j++){
+	   	  	    document.write('<td>'+i+'-'+j+'</td>');
+	   	    }
+	   	       
+	   	        document.write('</tr>');
+	        }
+	    document.write('</table>');
+	   //表格
+	   table(8,9);
+	   function table(row,col){
+	   var table='<table border=1 cellspacing=0>';
+	       for(var i=1;i<=row;i++){
+	       	var color;
+	       	if(i%2==0){
+	       		color='pink';
+	       	}else{
+	       		color='yellow';
+	       	}
+	     	table+='<tr bgcolor='+color+'>';
+	       	  for(var j=1;j<=col;j++){
+	       	  	table+='<td>'+i+'*'+j+'</td>';
+	       	  }
+	       	table+='</tr>';
+	       }
+       document.write(table);
+   }
+       //杨辉三角
+       sanjiao(10);
+        function  sanjiao(row){ 
+        for(var a=1;a<=row;a++){
+       	 for(var b=1;b<=row-a;b++){
+      	 	document.write('-')
+         }
+          for(var b=1;b<=2*a-1;b++){
+          	document.write('*');
+          }
+          document.write('<br/>');
+        }
+     
+       for(var a=1;a<=row;a++){
+       	  for(var b=1;b<=a-1;b++){
+      	 	document.write('-')
+      	 }
+       	for(var b=1;b<=(2*row-1)-2*(a-1);b++){
+       		document.write('*');
+       	}
+       	document.write('<br/>');
+       	}
+       }
+       //100之内的菲波那切数 1 1 2 3 5 8 13 21 34 55 89 144
+       var i=1,j=1;
+       for(var k=0;k<100;){
+       	k=i+j;
+       	document.write(k+'&nbsp');
+       	i=j;
+       	j=k;
+
+       }
+       //数组取最大最小值
+      var arr1=[55,41,63,5,8,21,49,88,72];
+       zuidaxiao(arr1);
+       function zuidaxiao(arr){
+       var max=arr[0];
+       var min=arr[0];
+         for(var i=0;i<=arr.length-1;i++){
+            if(max<arr[i]){
+               max=arr[i];
+            }
+            if(min>arr[i]){
+               min=arr[i];
+            }
+         }
+       console.log(max);
+       console.log(min);
+   }
+       //数组从小到大排序
+      
+     
+        var arr=[[55,41,63],[5,8,21],[49,88,72]];
+        var max=arr[0][0];
+        for(var i=0;i<arr.length;i++){
+        	for(var j=0;j<arr[i].length;j++){
+        		if(max<arr[i][j]){
+        		max=arr[i][j];
+        	}
+        	}
+        console.log(max);
+           }
+        
+         //数组去空
+         var arr2=[55,41,,5,8,21,,88,72];
+         shukong(arr2);
+         function shukong(arr){
+         var arr=[55,41,,5,8,21,,88,72];
+         var newarr=[];
+           for(var i=0;i<=arr.length-1;i++){
+               if(arr[i]!==undefined){
+               	newarr[newarr.length]=arr[i];
+               }
+
+               //if((typeof arr[i])!=='undefined'){
+               //	newarr[newarr.length]=arr[i];
+               //}
+           }
+           console.log(newarr);
+        }
+        var  arr1=[1,2,3,4,5,6,7]
+        push(arr1,55,6,6,88,36)
+        function push(arr){
+          for(var i=1;i<arguments.length;i++){
+          	arr[arr.length] = arguments[i];
+          }
+          console.log(arr);
+        }
+        var  arr1=[1,2,3,4,5,6,7]
+        push(arr1,55,6,6,88,36)
+        function push(arr,...value){
+        	for(var i=0;i<value.length;i++){
+          	arr[arr.length] = value[i];
+          }
+        }
+        
+        var arr=[1,2,22,33,555,44,87];
+        var result=exist(arr,44);
+        alert(result);
+        function exist(arr,value){
+        	if(!(typeof arr=='object'&&arguments.length>1)){
+        		return('输入有误');
+        	}
+        	for(var i=0;i<arr.length;i++){
+        		if(arr[i]==value){
+        			return true;
+        		}
+
+        	}
+        	return false;
+        }
+        //数组----------------字符串
+        var arr=[22,52,68,43,19,29,31];
+        console.log(zhuanhuan(arr,'-'));
+        function zhuanhuan(arr,l){
+        	if(l==undefined){
+        		l='-';
+        	}else{
+        		l=l;
+        	}
+        	var r='';
+        	for(var i=0;i<arr.length;i++){
+               if(i<arr.length-1){
+               	r+=arr[i]+l;
+               }else{
+               	r+=arr[i];
+               }
+        	}
+        	return r;
+        }
+        //数组里面偶数的数组元素
+        var arr=[1,5,6,9,8,5,4,2,3,5];
+        console.log(filter(arr));
+        function filter(arr){
+        	var newarr=[];
+        	for(var i=0;i<arr.length;i++){
+                if(arr[i]%2==0){
+                  newarr[newarr.length]=arr[i];
+            }
+	 
+        	}
+        	return newarr;
+        }
+
+
+
+        //简易计算器
+        function aa(num1,num2){
+        	return num1*num2;
+        }
+         function bb(num1,num2){
+        	return num1*num2+num2;
+        }
+         function cc(num1,num2){
+        	return num1*2-num2;
+        }
+        function math(num1,num2,fn){
+        	return fn(num1,num2);
+        }
+        var result=math(2,4,aa);
+        alert(result);
+
+
+
+        var arr=[1,6,99,85,47,32,85];
+        var result=chazhaoof(arr,88);
+        var result1=lastchazhaoof(arr,85);
+        console.log(result);
+        console.log(result1);
+        function chazhaoof(arr,num){
+          for(var i=0;i<arr.length;i++){
+            if (arr[i]==num){
+              return i;
+            }
+          }
+            return -1;
+        }
+        function lastchazhaoof(arr,num){
+          for(var i=arr.length-1;i>=0;i--){
+            if (arr[i]==num){
+              return i;
+            }
+          }
+            return -1;
+        }
+
+
+
+        //反转
+      var arr=[1,6,99,85,47,32,85];
+      function reverse(arr){
+        var arr1=[];
+        for(var i=arr.length-1;i>=0;i--){
+          push(arr1,arr[i]);
+        }
+        return arr1;
+      }
+      function push(arr,...rest){
+        for(var i=0;i<rest.length;i++){
+          arr[arr.length]=rest[i];
+        }
+      }
+      console.log(reverse(arr));
+
+
+
+      //万能的删除
+  
+      console.log(splicedelete(arr,3,4))
+      function splicedelete(arr,pos,num){
+        var arr1=[];
+        for(i=0;i<arr.length;i++){
+          if(i>=pos && i<pos+num){
+            continue;
+          }
+          arr1[arr1.length]=arr[i];
+        }
+        return arr1;
+      }
+
+      //万能的添加
+       
+      console.log(spliceadd(arr,2,'a','b','c'))
+      function spliceadd(arr,pos,...rest){
+        var arr1=[];
+        for(var i=0;i<pos;i++){
+          arr1[arr1.length]=arr[i];
+        }
+        for(var i=0;i<rest.length;i++){
+          arr1[arr1.length]=rest[i];
+        }
+        for(var i=pos;i<arr.length;i++){
+          arr1[arr1.length]=arr[i];
+        }
+        return arr1;
+      }
+
+      //万能的添加和删除
+      var arr=[1,6,99,85,47,32,85];
+      function splice(arr,pos,num,...rest){
+        var newarr=splicedelete(arr,pos,num);
+        if(rest.length>0){
+        newarr=spliceadd(newarr,pos,...rest);
+        }
+        return newarr;
+      }
+      console.log(splice(arr,2,4,'a','b','c','d'));
+      
+      //映射  数组元素扩大缩小
+       var arr=[1,6,99,85,47,32,85];
+      function map(arr,fn){
+        var newarr=[];
+        for(var i=0;i<arr.length;i++){
+          newarr[newarr.length]=fn(arr[i]);
+        }
+        return newarr;
+      }
+      var result=map(arr,function(value){
+        return value*2;
+      })
+      console.log(result);
+
+      //筛选         回调函数
+      var arr=[1,6,99,85,47,32,85];
+      function filter(arr,fn){
+        var newarr=[];
+        for(var i=0;i<arr.length;i++){
+          // if(fn(arr[i])){
+          //    newarr[newarr.length]=arr[i];
+          // }
+        }
+        return newarr;
+      }
+      var result=filter(arr,function(value){
+        return value>20;
+      })
+      console.log(result);
+
+      //some
+      var arr=[1,6,99,85,47,32,85];
+      function some(arr,fn){
+        for(var i=0;i<arr.length;i++){
+          if(fn(arr[i])){
+            return true;
+          }
+        }
+        return false;
+      }
+     var result=some(arr,function(value){
+      return value>0;
+     })
+     console.log(result);
+
+      //every
+     var arr=[1,6,99,85,47,32,85];
+     function every(arr,fn){
+        for(var i=0;i<arr.length;i++){
+          if(!fn(arr[i])){
+            return false;
+          }
+        }
+        return true;
+      }
+    var result=every(arr,(value=>value>0));
+    console.log(result);
+    
+
+    //递归函数   自己调用自己
+    fn(0);
+    function fn(num){
+       if(num<4){
+        fn(++num)
+       }
+      alert(num);
+    }
+
+
+    //arr=arr1   传地址（浅拷贝）
+    //遍历      传值（深拷贝）
+    var arr1=[];
+    for(var i=0;i<arr.length;i++){
+      arr1[i]=arr[i];
+    }
+    console.log(arr);
+    console.log(arr1);
+
+
+
+    //复制
+    var arr=[1,6,99,85,[47,32,85]];
+    var result=copy(arr);
+    console.log(result);
+    function copy(arr){
+      var newarr=[];
+      for(var i=0;i<arr.length;i++){
+        if(typeof arr[i] =='object'){
+          newarr[i]=copy(arr[i]);
+        }else{
+          newarr[i]=arr[i];
+        }
+      }
+      return newarr;
+    }
+
+
+
+    //闭包函数  在一个函数内嵌套一个函数，内部嵌套的函数作为返回值返回
+    function fn(){
+      var num=10;
+      return fn1;
+      function fn1(){
+        num++;
+        return num;
+      }
+    }
+    var result=fn();
+    alert(result);
+
+
+
+    //箭头函数   ES6中的新写法  一般用于回调函数 没有arguments对象
+    var fn=a =>a;
+    alert(fn(10));
+    //没有参数
+    var fn=() =>10;
+    //有多个参数
+    var fn=(a,b)=>a+b;
+    //代码较多
+    var fn=(a,b)=>{
+      alert(a-b);
+      alert(a+b);
+      return [a,b];
+    }
+    alert(fn(1,2));
+   
+
+  //let能记录下每次i的值
+   var arr=[];
+   for(var i=0;i<10;i++){
+    arr[i]=function(){
+      alert(i);
+    }
+   }
+   arr[2]();
+   arr[5]();
+    
+
+
+
+    var num='a';
+    function fn(){
+      alert(num);
+      if(true){
+        let num=10;
+        alert(num);
+      }
+    }
+    fn();
+    alert(num);
+
+    let str = '张三';
+    console.log(escape(str));   //编码
+
+    console.log(unescape('%u5F20%u4E09'));    //解码
+    console.log(isNaN('%u5F20%u4E09'));
+   
+    var n=10;
+    if(n%2){
+      n=n;
+    } else{
+      n=false;
+    }
+    alert(n);
+
+
+
+    function Person(){
+
+    }
+    let lisi=new Person();
+    lisi.age=25;
+    lisi.name='lisi';
+    lisi.sex='女';
+    alert(lisi.age);
+    alert(lisi.name); 
+    alert(lisi.sex);
+    </script>
+</head>
+<body>
+</body>
+</html>
